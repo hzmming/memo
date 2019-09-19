@@ -1,10 +1,10 @@
-const memo = document.createElement('div')
-memo.style = "width: 300px;height: 300px;background: pink;position: fixed;right: 20px;bottom: 50px;padding: 20px; font-size: 20px;color: hotpink; outline: hotpink;"
-memo.contentEditable = true
+const memo = document.createElement('div');
+memo.style = "width: 300px;height: 300px;background: pink;position: fixed;right: 20px;bottom: 50px;padding: 20px; font-size: 20px;color: hotpink; outline: hotpink;";
+memo.contentEditable = true;
 memo.onmousemove = (evt) => {
   if(evt.buttons > 0){
-      const target = evt.target
-      const {top, left} = target.getBoundingClientRect()
+      const target = evt.target;
+      const {top, left} = target.getBoundingClientRect();
       // 碰撞检测
       if(top + evt.movementY + target.offsetHeight > window.innerHeight){
           target.style.top = `${window.innerHeight - target.offsetHeight}px`
@@ -22,4 +22,4 @@ memo.onmousemove = (evt) => {
       }
   }
 }
-document.body.appendChild(memo)
+document.body.appendChild(memo);
